@@ -5,11 +5,15 @@ const Form = ({ addTodo }) => {
 
 	const handleSubmit = e => {
 		e.preventDefault()
+		if(!value.trim()){
+			return 
+		}
 		addTodo(value)
+		setValue('')
 	}
 	return (
-		<form>
-			<input type='text'
+		<form onSubmit={handleSubmit}>
+			<input value={value} type='text'
 			onChange={e => {
 				setValue(e.target.value)
 			}} 
