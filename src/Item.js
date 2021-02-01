@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 
-const Item = ({content}) => {
+const Item = ({ content, id, deleteTodo }) => {
 	const [isDone, setIsDone] = useState(false)
+
+	const handleDelete = () => {
+		deleteTodo(id)
+	}
+
 	return (
 		<li>
 			<input type="checkbox" onChange={() => {
@@ -10,8 +15,7 @@ const Item = ({content}) => {
 			}} />
 			<span style={{textDecoration: isDone ? 'line-through' : 'none'}}>
 			{content}</span>
-			{/* 三項演算子 */}
-			{/* const data = 条件式 ? trueのときの値 : falseのときの値 */}
+			<button onClick={handleDelete}>delete</button>
 		</li>
 	)
 }
