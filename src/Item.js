@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from "./components/button"
 
 const Item = ({ content, id, deleteTodo }) => {
 	const [isDone, setIsDone] = useState(false)
@@ -15,7 +16,7 @@ const Item = ({ content, id, deleteTodo }) => {
 			}} />
 			<span style={{textDecoration: isDone ? 'line-through' : 'none'}}>
 			{content}</span>
-			<button onClick={handleDelete}>delete</button>
+			<Button onClick={handleDelete}>Delete</Button>
 		</li>
 	)
 }

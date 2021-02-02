@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Form from './Form'
 import List from './List'
 import { nanoid } from 'nanoid'
+import styled from 'styled-components'
+
 
 const App = () => {
 	const [todos, setTodos] = useState([])
